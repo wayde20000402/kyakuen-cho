@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink:    #1a0f0a;
+  --paper:  #f5e6c8;
+  --aged:   #e8d5a3;
+  --vermil: #c0392b;
+  --indigo: #1a3a5c;
+  --gold:   #c9a84c;
+  --jade:   #2d6a4f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; overflow: hidden; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); }
+  50%       { box-shadow: 0 0 0 8px rgba(201,168,76,0.15); }
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.8; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes fade-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.float        { animation: float 4s ease-in-out infinite; }
+.pulse-gold   { animation: pulse-gold 2s ease-in-out infinite; }
+.shimmer      { animation: shimmer 3s ease-in-out infinite; }
+.spin-slow    { animation: spin-slow 20s linear infinite; }
+.slide-in-right { animation: slide-in-right 0.35s cubic-bezier(0.22,1,0.36,1); }
+.fade-up      { animation: fade-up 0.4s ease-out; }
+
+.react-flow__edge-path {
+  stroke: var(--indigo) !important;
+  stroke-dasharray: 6 4 !important;
+  opacity: 0.5 !important;
+}
+.react-flow__background { background: transparent !important; }
+.react-flow__controls {
+  background: rgba(26,15,10,0.9) !important;
+  border: 1px solid rgba(201,168,76,0.3) !important;
+  border-radius: 6px !important;
+}
+.react-flow__controls-button {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(201,168,76,0.2) !important;
+  color: var(--gold) !important;
+}
+.react-flow__minimap {
+  background: rgba(26,15,10,0.85) !important;
+  border: 1px solid rgba(201,168,76,0.3) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201,168,76,0.5); }
